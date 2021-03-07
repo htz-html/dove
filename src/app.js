@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Button from './button.vue'
 import Icon from './icon.vue'
 import ButtonGroup from './button-group.vue'
+import { expect } from 'chai'
 
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
@@ -14,6 +15,8 @@ new Vue({
   }
 })
 
+// import chai from 'chai'
+// const expect = chai.expect
 {
   //自动创建一个按钮
   const Constructor = Vue.extend(Button)
@@ -24,5 +27,6 @@ new Vue({
   })
   button.$mount("#test")
   let useElement = button.$el.querySelector('use')
-  console.log(useElement)
+  let href = useElement.getAttribute('xlink:href')
+  expect(href).to.eq("#i-search")
 }
