@@ -17,6 +17,10 @@ new Vue({
 {
   //自动创建一个按钮
   const Constructor = Vue.extend(Button)
-  const button = new Constructor()
+  const button = new Constructor({
+    propsData:{
+      icon: 'search'
+    }
+  })
   button.$mount("#test")
 }
