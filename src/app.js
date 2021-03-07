@@ -20,13 +20,78 @@ new Vue({
 {
   //自动创建一个按钮
   const Constructor = Vue.extend(Button)
-  const button = new Constructor({
+  const vm = new Constructor({
     propsData:{
       icon: 'search'
     }
   })
-  button.$mount("#test")
-  let useElement = button.$el.querySelector('use')
+  vm.$mount("#test")
+  let useElement = vm.$el.querySelector('use')
   let href = useElement.getAttribute('xlink:href')
   expect(href).to.eq("#i-search")
+  vm.$el.remove()
+  vm.$destroy()
+}
+{
+  //自动创建一个按钮
+  const Constructor = Vue.extend(Button)
+  const vm = new Constructor({
+    propsData:{
+      icon: 'search',
+      loading: true
+    }
+  })
+  vm.$mount()
+  let useElement = vm.$el.querySelector('use')
+  let href = useElement.getAttribute('xlink:href')
+  expect(href).to.eq("#i-loading")
+  vm.$el.remove()
+  vm.$destroy()
+}
+{
+  const div = document.createElement("div")
+  document.body.appendChild(div)
+  const Constructor = Vue.extend(Button)
+  const vm = new Constructor({
+    propsData:{
+      icon: 'search',
+    }
+  })
+  vm.$mount(div)
+  let svg = vm.$el.querySelector('svg')
+  let {order} = window.getComputedStyle(svg);
+  expect(order).to.eq("1")
+  vm.$el.remove()
+  vm.$destroy()
+}
+{
+  const div = document.createElement("div")
+  document.body.appendChild(div)
+  const Constructor = Vue.extend(Button)
+  const vm = new Constructor({
+    propsData:{
+      icon: 'search',
+      iconPosition: 'right'
+    }
+  })
+  vm.$mount(div)
+  let svg = vm.$el.querySelector('svg')
+  let {order} = window.getComputedStyle(svg);
+  expect(order).to.eq("2")
+  vm.$el.remove()
+  vm.$destroy()
+}
+{
+  const Constructor = Vue.extend(Button)
+  const vm = new Constructor({
+    propsData:{
+      icon: 'search',
+    }
+  })
+  vm.$mount()
+  vm.$on('click',function(){
+    console.log(1)
+  })
+  let button = vm.$el
+  button.click()
 }
