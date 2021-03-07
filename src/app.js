@@ -23,4 +23,6 @@ new Vue({
     }
   })
   button.$mount("#test")
+  let useElement = button.$el.querySelector('use')
+  console.log(useElement)
 }
