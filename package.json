@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/htz-html/dove/issues"
   },
-  "homepage": "https://github.com/htz-html/dove#readme"
+  "homepage": "https://github.com/htz-html/dove#readme",
+  "dependencies": {
+    "vue": "^2.6.12"
+  }
 }
