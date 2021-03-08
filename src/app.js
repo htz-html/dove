@@ -15,7 +15,9 @@ new Vue({
   }
 })
 
-// import chai from 'chai'
+import chai from 'chai'
+import spies from 'chai-spies'
+chai.use(spies)
 // const expect = chai.expect
 {
   //自动创建一个按钮
@@ -29,7 +31,7 @@ new Vue({
   let useElement = vm.$el.querySelector('use')
   let href = useElement.getAttribute('xlink:href')
   expect(href).to.eq("#i-search")
-  vm.$el.remove()
+  vm.$el.remove() 
   vm.$destroy()
 }
 {
@@ -89,9 +91,9 @@ new Vue({
     }
   })
   vm.$mount()
-  vm.$on('click',function(){
-    console.log(1)
-  })
+  let spy = chai.spy(function(){})
+  vm.$on('click',spy)
   let button = vm.$el
   button.click()
+  expect(spy).to.have.been.called()
 }
