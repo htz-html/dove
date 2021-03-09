@@ -45,7 +45,14 @@
         <g-input value="张三" error="姓名不能低于两个字!"></g-input>
       </div>
       <div class="box">
-        <g-input value="张三" @change="inputChange"></g-input>
+        <g-input value="张三"  @change="inputChange"></g-input>
+      </div>
+      <div class="box">
+        <g-input v-model="message" @change="inputChange"></g-input>
+        <p>
+          {{message}}
+          <button @click="message += 1">+1</button>
+        </p>
       </div>
     </div>
     <div>
