@@ -15,7 +15,6 @@ new Vue({
   }
 })
 
-<<<<<<< HEAD
 import chai from 'chai'
 import spies from 'chai-spies'
 chai.use(spies)
@@ -98,7 +97,6 @@ chai.use(spies)
   button.click()
   expect(spy).to.have.been.called()
 }
-=======
 // import chai from 'chai'
 // import spies from 'chai-spies'
 // chai.use(spies)
@@ -188,4 +186,3 @@ chai.use(spies)
 //     console.error(error.message)
 //   })
 // }
->>>>>>> 50c807b933acb4c206da0936541b0ffcdaeafafe
