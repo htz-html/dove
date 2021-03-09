@@ -4,6 +4,7 @@
 <script>
 import './svg'
 export default {
+  name:"DoveIcon",
   props:['name']
   // props:{
   //   name: {
@@ -13,7 +14,7 @@ export default {
   // }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   .g-icon{
     width: 1em;
     height: 1em;
