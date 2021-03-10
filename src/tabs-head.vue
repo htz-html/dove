@@ -1,13 +1,14 @@
 <template>
-  <div class="tabs-header">
+  <div class="tabs-head">
     <slot></slot>
+    <slot name="actions"></slot>
   </div>
 </template>
 <script>
 export default {
-  name: "DoveTabsHeader"
+  name: "DoveTabsHead"
 }
 </script>
 <style lang="scss" scoped>
-  .tabs-header{}
+  .tabs-head{}
 </style>

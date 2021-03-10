@@ -5,7 +5,23 @@
 </template>
 <script>
 export default {
-  name: "DoveTabs"
+  name: "DoveTabs",
+  props:{
+    selected: {
+      type: String,
+      require: true
+    },
+    direction:{
+      type:String,
+      default: "horizontal",
+      validator(value){
+        return ['horizontal','vertical'].includes(value) >=0
+      }
+    }
+  },
+  created(){
+    // this.$emit('update: selected','xxx')
+  }
 }
 </script>
 <style lang="scss" scoped>

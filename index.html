@@ -40,15 +40,22 @@
     }
   </style>
   <div id="app">
-    <g-layout style="height: 100vh;">
-      <g-sider class="demo">sider</g-sider>
-      <g-layout>
-        <g-header class="demo">header</g-header>
-        <g-content class="demo">content</g-content>
-        
-        <g-footer class="demo">footer</g-footer>
-      </g-layout>
-    </g-layout>
+    <g-tabs :selected.sync="selectedTab">
+      <g-tabs-head>
+        <template slot="actions">
+          <button>设置</button>
+        </template>
+        <g-tabs-item name="woman">
+          <g-icon name="search"></g-icon>美女</g-tabs-item>
+        <g-tabs-item name="finance">财经</g-tabs-item disabled>
+        <g-tabs-item name="sports">体育</g-tabs-item>
+      </g-tabs-head>
+      <g-tabs-body>
+        <g-tabs-pane name="woman">我是美女的内容</g-tabs-pane>
+        <g-tabs-pane name="finance">我是财经的内容</g-tabs-pane>
+        <g-tabs-pane name="sports">我是体育的内容</g-tabs-pane>
+      </g-tabs-body>
+    </g-tabs>
   </div>
   <script src="./src/app.js"></script>
 </body>
