@@ -6,7 +6,10 @@
 </template>
 <script>
 export default {
-  name: "DoveTabsHead"
+  name: "DoveTabsHead",
+  inject: ['eventBus'],
+  created(){
+  }
 }
 </script>
 <style lang="scss" scoped>

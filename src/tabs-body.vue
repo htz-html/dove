@@ -5,7 +5,10 @@
 </template>
 <script>
 export default {
-  name: "DoveTabsBody"
+  name: "DoveTabsBody",
+  inject: ['eventBus'],
+  created(){
+  }
 }
 </script>
 <style lang="scss" scoped>

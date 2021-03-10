@@ -4,6 +4,7 @@
   </div>
 </template>
 <script>
+import Vue from 'vue'
 export default {
   name: "DoveTabs",
   props:{
@@ -17,6 +18,16 @@ export default {
       validator(value){
         return ['horizontal','vertical'].includes(value) >=0
       }
+    }
+  },
+  data(){
+    return{
+      eventBus: new Vue()
+    }
+  },
+  provide(){
+    return {
+      eventBus: this.eventBus
     }
   },
   created(){
