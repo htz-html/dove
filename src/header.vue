@@ -1,11 +1,15 @@
 <template>
-  <div></div>
+  <div class="header">
+    <slot></slot>
+  </div>
 </template>
 <script>
 export default {
-  
+  name: "DoveHeader"
 }
 </script>
 <style lang="scss" scoped>
-  
+  .header{
+
+  }
 </style>
