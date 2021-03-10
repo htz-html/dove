@@ -46,12 +46,16 @@
         <g-col>3</g-col>
       </g-row>
       <g-row>
-        <g-col span="2">2</g-col>
-        <g-col span="22">22</g-col>
+        <g-col span="6">6</g-col>
+        <g-col span="18">18</g-col>
       </g-row>
       <g-row>
-        <g-col span="3">3</g-col>
-        <g-col span="19" offset='2'>21</g-col>
+        <g-col span=24
+        :wide-pc="{span: 16}"
+        ><div style="background: rgb(190, 190, 255);">响应1</div></g-col>
+        <g-col span=24 
+        :wide-pc="{span: 8}"
+        ><div style="background: rgb(141, 141, 223);">响应2</div></g-col>
       </g-row>
       <g-row gutter="10">
         <g-col>1</g-col>
