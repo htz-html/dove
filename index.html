@@ -33,73 +33,26 @@
   </style>
 </head>
 <body>
+  <style>
+    .demo{
+      background: rgb(192, 225, 255);
+      border:1px solid rgb(123, 66, 214);
+      height: 100px;
+    }
+  </style>
   <div id="app">
-    <div>
-      <h3>栅格式布局 </h3>
-      <g-row>
-        <g-col>1</g-col>
-        <g-col>2</g-col>
-      </g-row>
-      <g-row>
-        <g-col>1</g-col>
-        <g-col>2</g-col>
-        <g-col>3</g-col>
-      </g-row>
-      <g-row>
-        <g-col span="6">6</g-col>
-        <g-col span="18">18</g-col>
-      </g-row>
-      <g-row>
-        <g-col span=24
-        :wide-pc="{span: 16}"
-        ><div style="background: rgb(190, 190, 255);">响应1</div></g-col>
-        <g-col span=24 
-        :wide-pc="{span: 8}"
-        ><div style="background: rgb(141, 141, 223);">响应2</div></g-col>
-      </g-row>
-      <g-row gutter="10">
-        <g-col>1</g-col>
-        <g-col>2</g-col>
-      </g-row>
-    </div>
-    <div>
-      <h3>input 组件 </h3>
-      <div class="box">
-        <g-input value="张三"></g-input>
-        <g-input value="知恩" readonly></g-input>
-        <g-input value="李三" disabled></g-input>
-      </div>
-      <div class="box">
-        <g-input value="张三" error="姓名不能低于两个字!"></g-input>
-      </div>
-      <div class="box">
-        <g-input value="张三"  @change="inputChange"></g-input>
-      </div>
-      <div class="box">
-        <g-input v-model="message" @change="inputChange"></g-input>
-        <p>
-          {{message}}
-          <button @click="message += 1">+1</button>
-        </p>
-      </div>
-    </div>
-    <div>
-      <h3>图标按钮</h3>
-      <g-button icon="write"></g-button>
-      <g-button icon="share"></g-button>
-      <g-button icon="delete"></g-button>
-      <g-button icon="search">搜索</g-button>
-      <g-button icon="upload" icon-position="right">搜索</g-button>
-      <g-button>搜索</g-button>
-      <h3>加载中</h3>
-      <g-button :loading="loading1" @click="loading1 = !loading1">loading</g-button>
-      <h3>按钮组</h3>
-      <g-button-group>
-        <g-button icon="left">上一页</g-button>
-        <g-button>更多</g-button>
-        <g-button icon="right">下一页</g-button>
-      </g-button-group>
-    </div>
+    <g-row>
+      <g-col span=24 :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </g-col>
+      <g-col span=24 :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </g-col>
+      <g-col span=24 :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </g-col>
+      
+    </g-row>
   </div>
   <script src="./src/app.js"></script>
   <!-- <script src="//at.alicdn.com/t/font_2404753_k3qmdm3anpl.js"></script> -->
