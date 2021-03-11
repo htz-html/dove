@@ -31,12 +31,12 @@ export default {
     }
   },
   mounted(){  
-    this.$children.forEach((vm)=>{
-      if(vm.$options.mame === 'DoveTabsHead'){
-        vm.$children.forEach((item)=>{
-          if(item.$$options.name === 'DovetabsItem'
-          && item.name === this.selected) {
-            this.eventBus.$emit('update:selected', this.selected,item)
+    this.$children.forEach((vm)=> {
+      if(vm.$options.name === 'DoveTabsHead'){
+        vm.$children.forEach((childVm)=>{
+          if(childVm.$options.name === 'DoveTabsItem'
+          && childVm.name === this.selected) {
+            this.eventBus.$emit('update:selected', this.selected, childVm)
           }
         })
       }
