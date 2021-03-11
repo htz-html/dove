@@ -18,8 +18,8 @@ export default {
       default: false
     },
     name:{
-      type:String | Number,
-      require: true
+      type: String | Number,
+      required: true
     }
   },
   computed:{
@@ -43,6 +43,7 @@ export default {
 </script>
 <style lang="scss" scoped>
   .tabs-item{
+    flex-shrink: 0;
     padding: 0 1em;
     &.active{
       background: red;

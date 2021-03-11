@@ -10,7 +10,7 @@
 export default {
   name: "DoveTabsHead",
   inject: ['eventBus'],
-  created(){
+  created(){ 
   }
 }
 </script>

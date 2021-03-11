@@ -10,7 +10,7 @@ export default {
   props:{
     selected: {
       type: String,
-      require: true
+      required: true
     },
     direction:{
       type:String,
@@ -31,7 +31,7 @@ export default {
     }
   },
   mounted(){
-    this.eventBus.$emit('update: selected',this.selected)
+    this.eventBus.$emit('update:selected',this.selected)
   }
 }
 </script>
