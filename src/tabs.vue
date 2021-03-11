@@ -30,8 +30,17 @@ export default {
       eventBus: this.eventBus
     }
   },
-  mounted(){
-    this.eventBus.$emit('update:selected',this.selected)
+  mounted(){  
+    this.$children.forEach((vm)=>{
+      if(vm.$options.mame === 'DoveTabsHead'){
+        vm.$children.forEach((item)=>{
+          if(item.$$options.name === 'DovetabsItem'
+          && item.name === this.selected) {
+            this.eventBus.$emit('update:selected', this.selected,item)
+          }
+        })
+      }
+    })
   }
 }
 </script>
