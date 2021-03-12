@@ -30,21 +30,29 @@ export default {
       eventBus: this.eventBus
     }
   },
-  mounted(){  
-    if(this.$children.length === 0){
-      console && console.warn && 
-      console.warn("tabs的子组件应该是 tabs-head 和 tabs-body, 但你没有写子组件");
-    }
-    this.$children.forEach((vm)=> {
-      if(vm.$options.name === 'DoveTabsHead'){
-        vm.$children.forEach((childVm)=>{
-          if(childVm.$options.name === 'DoveTabsItem'
-          && childVm.name === this.selected) {
-            this.eventBus.$emit('update:selected', this.selected, childVm)
-          }
-        })
+  methods:{
+    checkChildren(){
+      if(this.$children.length === 0){
+        console && console.warn && 
+        console.warn("tabs的子组件应该是 tabs-head 和 tabs-body, 但你没有写子组件");
       }
-    })
+    },
+    selectTab(){
+      this.$children.forEach((vm)=> {
+        if(vm.$options.name === 'DoveTabsHead'){
+          vm.$children.forEach((childVm)=>{
+            if(childVm.$options.name === 'DoveTabsItem'
+            && childVm.name === this.selected) {
+              this.eventBus.$emit('update:selected', this.selected, childVm)
+            }
+          })
+        }
+      })
+    }
+  },
+  mounted(){  
+    this.checkChildren()
+    this.selectTab()
   }
 }
 </script>
