@@ -1,6 +1,6 @@
 <template>
-  <div class="popover" @click.stop="xxx">
-    <div ref="contentWrapper" v-if="visible" class="content-wrapper" @click.stop>
+  <div class="popover" @click="onClick">
+    <div ref="contentWrapper" v-if="visible" class="content-wrapper">
       <slot name="content"></slot>
     </div>
     <span ref="triggerWrapper">
@@ -17,21 +17,29 @@ export default {
     }
   },
   methods:{
-    xxx(){
-      this.visible = !this.visible
-      if(this.visible === true){
-        this.$nextTick(()=>{
-          document.body.appendChild(this.$refs.contentWrapper)
-          let {width,height,left,top}=this.$refs.triggerWrapper.getBoundingClientRect()
-          this.$refs.contentWrapper.style.left = left + window.scrollX + 'px'
-          this.$refs.contentWrapper.style.top = top + window.scrollY + 'px'
-          let eventHandle = ()=>{
-            this.visible = false
-            document.removeEventListener('click', eventHandle)
-          }
-          document.addEventListener('click', eventHandle)
-        })
+    onClick(event){
+      if(this.$refs.triggerWrapper.contains(event.target)){
+        this.visible = !this.visible
+        if(this.visible === true){
+          this.$nextTick(()=>{
+            document.body.appendChild(this.$refs.contentWrapper)
+            let {width,height,left,top}=this.$refs.triggerWrapper.getBoundingClientRect()
+            this.$refs.contentWrapper.style.left = left + window.scrollX + 'px'
+            this.$refs.contentWrapper.style.top = top + window.scrollY + 'px'
+            let eventHandler=(e)=>{
+              if(this.$refs.contentWrapper.contains(e.target)){
+              }else{
+                this.visible = false
+                document.removeEventListener('click', eventHandler)
+              }
+            }
+            document.addEventListener('click', eventHandler)
+          })
+        }
+      }else{
+        console.log("隐藏popover")
       }
+      
     }
   }
 }
