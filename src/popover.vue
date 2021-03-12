@@ -4,7 +4,7 @@
       class="content-wrapper"
       :class="{[`position-${position}`]:true}"
       >
-      <slot name="content"></slot>
+      <slot name="content" :close="close"></slot>
     </div>
     <span ref="triggerWrapper" style="display: inline-block">
       <slot></slot>
@@ -14,11 +14,6 @@
 <script>
 export default {
   name: "DovePopover",
-  data(){
-    return{
-      visible: false
-    }
-  },
   props:{
     position:{
       type: String,
@@ -50,6 +45,11 @@ export default {
         return 'mouseleave'
       }
     },
+  },
+  data(){
+    return{
+      visible: false
+    }
   },
   mounted(){
     if(this.trigger === 'click'){
