@@ -162,10 +162,12 @@ export default {
       &::before{
         border-top-color: black;
         top: 100%;
+        border-bottom: none;
       }
       &::after{
         border-top-color: white;
         top: calc(100% - 1px);
+        border-bottom: none;
       }
     }
     &.position-bottom{
@@ -176,10 +178,12 @@ export default {
       &::before{
         border-bottom-color: black;
         bottom: 100%;
+        border-top: none;
       }
       &::after{
         border-bottom-color: white;
         bottom: calc(100% - 1px);
+        border-top: none;
       }
     }
     &.position-left{
@@ -191,11 +195,13 @@ export default {
       }
       &::before{
         border-left-color: black;
+        border-right: none;
         left: 100%;
       }
       &::after{
         border-left-color: white;
         left: calc(100% - 1px);
+        border-right: none;
       }
     }
     &.position-right{
@@ -207,10 +213,12 @@ export default {
       &::before{
         border-right-color: black;
         right: 100%;
+        border-left: none;
       }
       &::after{
         border-right-color: white;
         right: calc(100% - 1px);
+        border-left: none;
       }
     }
   }
