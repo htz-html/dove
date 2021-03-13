@@ -32,11 +32,18 @@
 </head>
 <body>
   <div id="app" style="padding-top: 100px;padding-left: 100px;">
-    <g-collapse>
-      <g-collapse-item title="标题1">内容1</g-collapse-item>
-      <g-collapse-item title="标题2">内容2</g-collapse-item>
-      <g-collapse-item title="标题3">内容3</g-collapse-item>
+    <g-collapse :selected.sync="selectedTab">
+      <g-collapse-item title="标题1" name="1">
+        <p>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；
+        </p>
+        <p>
+          在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。
+        </p>
+      </g-collapse-item>
+      <g-collapse-item title="标题2" name="2">内容2</g-collapse-item>
+      <g-collapse-item title="标题3" name="3">内容3</g-collapse-item>
     </g-collapse>
+    {{selectedTab}}
   </div>
   <script src="./src/app.js"></script>
 </body>
