@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content1">
     <slot></slot>
   </div>
 </template>
@@ -10,7 +10,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .content{
+  .content1{
     flex-grow: 1;
+    background: rgb(228, 235, 230);
   }
 </style>

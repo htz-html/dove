@@ -5,6 +5,7 @@
     @input="$emit('input',$event.target.value)"
     @focus="$emit('focus',$event.target.value)"
     @blur="$emit('blur',$event.target.value)"
+    placeholder="请输入内容"
     >
     <template v-if="error">
       <icon name="error" class="icon-error"></icon>

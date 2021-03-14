@@ -9,5 +9,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .sider{}
+  .sider{
+    width: 200px;
+    background: rgb(194, 207, 201);
+  }
 </style>

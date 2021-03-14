@@ -15,7 +15,7 @@ export default {
   props: {
     name:{
       type:String | Number,
-      require: true
+      required: true
     }
   },
   computed:{

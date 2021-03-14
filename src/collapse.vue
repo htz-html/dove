@@ -27,6 +27,7 @@ export default {
     }
   },
   mounted(){
+    console.log(this.selected)
     this.eventBus.$emit('update:selected',this.selected)
     this.eventBus.$on('update:addSelected',(name)=>{
       let selectedCopy = JSON.parse(JSON.stringify(this.selected))
@@ -41,13 +42,10 @@ export default {
     this.eventBus.$on('update:removeSelected',(name)=>{
       let selectedCopy = JSON.parse(JSON.stringify(this.selected))
       let index = selectedCopy.indexOf(name)
-
       selectedCopy.splice(index,1)
       this.$emit('update:selected', selectedCopy)
       this.eventBus.$emit('update:selected',selectedCopy)
     })
-
-
   }
 }
 </script>

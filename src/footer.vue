@@ -9,5 +9,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .footer{}
+  .footer{
+    height: 50px;
+    background: #8e9c97;
+  }
 </style>

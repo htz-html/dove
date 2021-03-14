@@ -11,11 +11,12 @@
 export default {
   name: "DoveTabsHead",
   inject: ['eventBus'],
-  mounted(){ 
+  mounted(){
     this.eventBus.$on('update:selected', (item, vm)=>{
+      let offsetL = this.$el.getBoundingClientRect().left;
       let {width, height, top, left} = vm.$el.getBoundingClientRect()
-      this.$refs.line.style.width = `${width}px`  
-      this.$refs.line.style.left = `${left}px`
+      this.$refs.line.style.width = `${width}px`
+      this.$refs.line.style.left = `${left-offsetL}px`
     })
   }
 }

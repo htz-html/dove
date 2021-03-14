@@ -22,6 +22,7 @@
     }
     body {
       font-size: var(--font-size);
+      padding: 100px;
     }
     h3{
       margin: 40px 0 20px 0;
@@ -33,8 +34,21 @@
   </style>
 </head>
 <body>
-  <div id="app" style="padding-top: 100px;padding-left: 100px;">
-
+  <style>
+    .demo{
+      background: rgb(93, 199, 141);
+    }
+    .demo2{
+      background: rgb(126, 214, 207);
+    }
+  </style>
+  <div id="app">
+    <g-popover position="bottom">
+      <template slot="content">
+        <div>我是被弹出的内容，加油吧！少年！我们是最棒的</div>
+      </template>
+      <g-button>click 集火</g-button>
+    </g-popover>
   </div>
   <script src="./src/app.js"></script>
 </body>

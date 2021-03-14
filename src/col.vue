@@ -72,6 +72,7 @@ export default {
     },
     colStyle () {
       let {gutter} = this
+      console.log("xx",gutter)
       return {
         paddingLeft:gutter/2+'px',
         paddingRight:gutter/2+ 'px'

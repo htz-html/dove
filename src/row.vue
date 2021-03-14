@@ -18,8 +18,10 @@ export default {
     }
   },
   mounted(){
+    console.log('11',this.gutter)
     this.$children.forEach((vm)=>{
       vm.gutter = this.gutter
+      console.log('kk', vm)
     })
   },
   computed: {

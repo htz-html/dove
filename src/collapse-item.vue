@@ -1,9 +1,9 @@
 <template>
   <div class="collapse-item">
-    <div class="title" @click="toggle" :class="{ 'open-content': open }">
+    <div class="title" @click="toggle" :class="{ 'open-content1': open }">
       {{ title }}
     </div>
-    <div class="content" v-if="open">
+    <div class="content1" v-if="open">
       <slot></slot>
     </div>
   </div>
@@ -60,7 +60,8 @@ $border-radius: 4px;
     display: flex;
     align-items: center;
     padding-left: 10px;
-    &.open-content {
+    font-weight: 500;
+    &.open-content1 {
       border-bottom: 0;
     }
   }
@@ -76,7 +77,7 @@ $border-radius: 4px;
       border-bottom-right-radius: $border-radius;
     }
   }
-  > .content {
+  > .content1 {
     padding: 10px;
     color: #666;
   }
