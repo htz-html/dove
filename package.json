@@ -4,8 +4,11 @@
   "description": "这是一个UI框架",
   "main": "dist/index.js",
   "scripts": {
+    "start": "parcel index.html --no-cache",
     "dev-test": "parcel watch test/* --no-cache & karma start",
-    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
+    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -36,12 +39,13 @@
     "karma-mocha": "^2.0.1",
     "karma-sinon-chai": "^2.0.2",
     "mocha": "^8.3.1",
-    "node-sass": "^5.0.0",
-    "parcel-bundler": "1.12.3",
-    "sass": "^1.32.8",
+    "node-sass": "^4.9.2",
+    "parcel-bundler": "^1.12.4",
+    "sass-loader": "^7.1.0",
     "sinon": "^9.2.4",
     "sinon-chai": "^3.5.0",
-    "vue-template-compiler": "^2.6.12"
+    "vue-template-compiler": "^2.6.12",
+    "vuepress": "^0.13.1"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"
