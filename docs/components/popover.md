@@ -7,4 +7,6 @@ sidebarDepth: 2
 
 
 使用方法
-<popover-demos></popover-demos> 
+<ClientOnly>
+<popover-demos></popover-demos>
+</ClientOnly> 

@@ -1,4 +1,5 @@
 module.exports = {
+  base:'/dove-website/',
   title: '德芙 UI ',
   description: '一个好用的 UI 框架',
   themeConfig: {
