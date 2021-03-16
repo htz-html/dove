@@ -7,8 +7,6 @@
 export default {
   name: "DoveTabsBody",
   inject: ['eventBus'],
-  created(){
-  }
 }
 </script>
 <style lang="scss" scoped>

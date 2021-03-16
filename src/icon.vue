@@ -6,12 +6,6 @@ import './svg'
 export default {
   name:"DoveIcon",
   props:['name']
-  // props:{
-  //   name: {
-  //     type: String,
-  //     default:''
-  //   }
-  // }
 }
 </script>
 <style lang="scss" scoped>
